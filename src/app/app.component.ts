@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'title';
+  title = '#20 Style Binding | Dynamic Style';
+  color = 'red';
+
+  changeColor() {
+    this.color == 'red' ? this.color = 'blue' : this.color = 'red';
+  }
 }

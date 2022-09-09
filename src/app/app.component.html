@@ -1,4 +1,6 @@
 <h1>{{title}}</h1>
 <router-outlet></router-outlet>
 
+<h1 [style.color]="color">{{title}}</h1>
 
+<button (click)="changeColor()">Change Color</button>
