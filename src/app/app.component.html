@@ -1,4 +1,6 @@
 
 <router-outlet></router-outlet>
 
-
+    <h1 *ngIf="colors[0] === 'red'" [style.color]="colors[0]">Ye to Red color hai</h1>
+    <h1 *ngIf="colors[1] === 'green'" [style.color]="colors[1]">Ye to Green color hai</h1>
+    <h1 *ngIf="colors[2] === 'blue'" [style.color]="colors[2]">Ye to Blue color hai</h1>
