@@ -1,4 +1,26 @@
 <h1>{{title}}</h1>
 <router-outlet></router-outlet>
 
+<h3 *ngFor="let user of users">Name is {{user}}</h3>
+
+
+<table border>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email ID</th>
+            <th>Phone No.</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let user of usersDetail">
+        <tr>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.mobile}}</td>
+            <td>{{user.gender}}</td>
+        </tr>
+    </tbody>
+</table>
+
 
