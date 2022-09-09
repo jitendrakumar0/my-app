@@ -6,5 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'title';
+  title = '#19 Nested Loop';
+
+  users = [
+    {
+      name: 'Jitendra',
+      socials: [
+        'Gmail', 'Facebook', 'Instagram'
+      ]
+    },
+    {
+      name: 'Ajay',
+      socials: [
+        'Gmail', 'Instagram'
+      ]
+    },
+    {
+      name: 'Sushil',
+      socials: [
+        'Facebook', 'Instagram'
+      ]
+    },
+  ]
 }

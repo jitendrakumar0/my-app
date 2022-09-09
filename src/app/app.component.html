@@ -2,3 +2,11 @@
 <router-outlet></router-outlet>
 
 
+<ol *ngFor="let user of users">
+    <li>Name : {{user.name}}</li>
+    <li>Socials
+        <ul *ngFor="let social of user.socials">
+            <li>{{social}}</li>
+        </ul>
+    </li>
+</ol>
