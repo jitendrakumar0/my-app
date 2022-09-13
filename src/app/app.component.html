@@ -2,3 +2,8 @@
 <router-outlet></router-outlet>
 
 
+<app-child [rupees]="indianRupees" [doller]="inDoller"></app-child>
+
+<input type="number" #paisa />
+
+<button (click)="rendomValue(paisa.value)">Get Rendom</button>
