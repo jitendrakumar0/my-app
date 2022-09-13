@@ -2,3 +2,10 @@
 <router-outlet></router-outlet>
 
 
+<input type="text" name="" #task />
+<br><br>
+<button (click)="addTask(task.value)">Add Task</button>
+
+<ul>
+    <li *ngFor="let item of tasks"><span> {{item.id}} </span> <span> {{item.name}} </span> <span> <button (click)="removeItem(item.id)">Remove</button></span></li>
+</ul>
