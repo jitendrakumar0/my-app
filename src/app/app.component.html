@@ -2,3 +2,12 @@
 <router-outlet></router-outlet>
 
 
+<ul>
+    <li *ngFor="let user of users">
+        <app-user-detail [item]="user"></app-user-detail>
+    </li>
+</ul>
+
+<input type="text" placeholder="Enter Name" #name />
+<input type="email" placeholder="Enter Email" #email /> 
+<button (click)="addUser(name.value, email.value)">Add User</button>
