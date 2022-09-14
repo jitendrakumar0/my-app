@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'title';
+
+  updateData(item:any) {
+    console.warn(item);
+    this.title = item
+  }
 }
