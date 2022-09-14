@@ -9,3 +9,28 @@
 <ul>
     <li *ngFor="let item of tasks"><span> {{item.id}} </span> <span> {{item.name}} </span> <span> <button (click)="removeItem(item.id)">Remove</button></span></li>
 </ul>
+
+
+
+
+
+
+
+<h1>{{users}}</h1>
+<h1 *ngFor="let item of inventory">{{item.name}} {{item.quantity}}</h1>
+
+<button (click)="pop()">POP</button>
+<button (click)="shift()">Shift</button>
+<button (click)="concat()">concat</button>
+<button (click)="slice()">slice</button>
+<button (click)="indexof()">indexof</button>
+<button (click)="includes()">includes</button>
+<button (click)="find(task.value)">find</button>
+<button (click)="findindex(task.value)">findIndex</button>
+<button (click)="map(task.value)">map</button>
+<button (click)="filter(task.value)">filter</button>
+<button (click)="reduce()">reduce</button>
+<button (click)="every(task.value)">every</button>
+<button (click)="some(task.value)">some</button>
+<button (click)="reverse()">reverse</button>
+<button (click)="at(task.value)">at</button>
