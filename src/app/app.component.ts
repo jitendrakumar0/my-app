@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'title';
+  getValue(data:HTMLInputElement) {
+    console.clear();
+    console.info(data);
+  }
 }

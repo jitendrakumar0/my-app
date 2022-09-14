@@ -1,4 +1,6 @@
 <h1>{{title}}</h1>
 <router-outlet></router-outlet>
 
+<input type="text" placeholder="Enter Name Here" name="name" #box />
 
+<button (click)="getValue(box)">Get Value</button>
