@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'title';
+  title = '#29 Two way binding';
+
+  name:any;
 }
