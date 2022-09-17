@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'title';
+
+  formSubmit(data:any) {
+    console.info(data);
+  }
+
 }
+

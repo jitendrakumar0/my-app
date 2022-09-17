@@ -2,3 +2,10 @@
 <router-outlet></router-outlet>
 
 
+<form #loginForm="ngForm" (ngSubmit)="formSubmit(loginForm.value)">
+    <input type="email" name="email" placeholder="Enter Email ID" ngModel required="" />
+    <input type="password" name="password" placeholder="Enter Password" ngModel />
+    <button>Submit</button>
+</form>
+
+<button (click)="formSubmit(loginForm.controls['email'].status)">Out Side Submit</button>
