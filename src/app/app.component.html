@@ -2,3 +2,17 @@
 <router-outlet></router-outlet>
 
 
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+    <input type="email" placeholder="Email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel #email="ngModel" required="" />
+    <br>
+    <span style="color:red;" *ngIf="email.invalid && email.touched">Please enter valid email.</span>
+    <br><br>
+    <input type="password" placeholder="Password" name="password" #password="ngModel" minlength="8" maxlength="16" ngModel required="" />
+    <br>
+    <span style="color:red;" *ngIf="password.invalid && password.touched">Please enter password.</span>
+    <br><br>
+    <button [disabled]="loginForm.invalid">Submit</button>
+</form>
+
+
+

@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'title';
+  title = '#36 Template driven form validations';
+
+  login(data:any) {
+    console.info(data);
+  }
+
+  
+
+  
+  
 }
