@@ -11,8 +11,8 @@ export class AppComponent {
   submitBtn = false;
 
   loginForm = new FormGroup({
-    username:new FormControl('', [Validators.required, Validators.email]),
-    password:new FormControl('', [Validators.required, Validators.minLength(8)])
+    username:new FormControl('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
+    password:new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z0-9!@#\$%\^\&*_=+-]{8,12}$')])
   });
 
   get user() {
