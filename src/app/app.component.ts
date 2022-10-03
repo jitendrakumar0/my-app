@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = '#39 Basic Routing';
+  title = '#41 Wild Card | 404 page routing';
 }
