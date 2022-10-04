@@ -1,4 +1,11 @@
+<app-header></app-header>
+
 <h1>{{title}}</h1>
+
 <router-outlet></router-outlet>
 
+<ul>
+    <li *ngFor="let user of sendUserData">{{user.name}}</li>
+</ul>
 
+<app-footer></app-footer>
