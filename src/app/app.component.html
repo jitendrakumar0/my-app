@@ -2,3 +2,8 @@
 <router-outlet></router-outlet>
 
 
+<h1>
+    <ul>
+        <li *ngFor="let user of users">{{user.id}}---{{user.name}}---{{user.indian == true ? "Yes, I'm Indian":"No, I'm not Indian"}}---{{user.address}}</li>
+    </ul>
+</h1>
