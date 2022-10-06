@@ -7,12 +7,17 @@ import { StudentsService } from './services/students.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = '#45 get data from API and display';
+  title = '#46 Post API Method | save data with API';
   users:any;
   constructor(private usersData:StudentsService) {
     usersData.users().subscribe((data)=>{
       // console.warn("data", data);
       this.users=data;
     })
+  }
+  saveUsers(userData:any) {
+      this.usersData.saveUsers(userData).subscribe((kuchbhi)=>{
+        // console.info(kuchbhi);
+      })
   }
 }

@@ -5,3 +5,15 @@
 <ul>
     <li *ngFor="let user of users">{{user.name}}--------------{{user.age}}</li>
 </ul>
+
+
+
+<form #usersForm="ngForm" (ngSubmit)="saveUsers(usersForm.value)">
+    <input type="text" ngModel name="name" placeholder="Full Name">
+    <br>
+    <br>
+    <input type="number" ngModel name="age" placeholder="Your Age">
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+</form>
