@@ -4,14 +4,10 @@ import { ListComponent } from './list/list.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  {
-    path:"admin",
-    children:[
       {path:"login", component:LoginComponent},
       {path:"list", component:ListComponent}
-    ]
-  }
 ];
+console.log("Admin Module Loaded");
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
