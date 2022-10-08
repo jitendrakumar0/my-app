@@ -2,3 +2,10 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+router-outlet {
+    & ~ * {
+        flex: 1 1 auto;
+        overflow: hidden auto;
+    }
+}

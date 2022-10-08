@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 py-5">
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-unstyled row">
+                        <li *ngFor="let item of components" class="col-lg-4 col-md-6"><a routerLink="{{item.url}}" class="fw-bold text-decoration-none text-primary fs-5">{{item.name}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

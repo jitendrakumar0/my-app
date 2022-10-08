@@ -1,0 +1,62 @@
+<div class="container py-5">
+    <div class="row gap-5">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header fw-bold">Basic Alert</div>
+                <div class="card-body">
+                    <p>
+                        <ngb-alert [dismissible]="false">
+                            <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                        </ngb-alert>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header fw-bold">Closable Alert</div>
+                <div class="card-body">
+                    <p *ngFor="let alert of alerts">
+                        <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>
+                    </p>
+                    <p>
+                        <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header fw-bold">Self closing alert</div>
+                <div class="card-body">
+                    <p>
+                        Static self-closing alert that disappears after 20 seconds (refresh the page if it has already disappeared)
+                    </p>
+                    <ngb-alert #staticAlert *ngIf="!staticAlertClosed" (closed)="staticAlertClosed = true">Check out our awesome new
+                    features!</ngb-alert>
+                    
+                    <hr />
+                    
+                    <p>
+                        Show a self-closing success message that disappears after 5 seconds.
+                    </p>
+                        <ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
+                        </ngb-alert>
+                    <p>
+                        <button class="btn btn-primary" (click)="changeSuccessMessage()">Change message</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header fw-bold">Custom alert</div>
+                <div class="card-body">
+                    <p>
+                        <ngb-alert type="custom" [dismissible]="false"><strong>Whoa!</strong> This is a custom alert.</ngb-alert>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
