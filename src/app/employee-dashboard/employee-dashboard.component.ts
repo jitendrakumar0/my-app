@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
 import { EmployeeDashboardModel } from './employee-dashboard.model';
 
@@ -21,7 +21,7 @@ export class EmployeeDashboardComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.formValue);
     this.formValue = this.formbuilder.group({
-      firstname : [''],
+      firstname : ('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
       lastname : [''],
       email: [''],
       mobilenumber: [''],
