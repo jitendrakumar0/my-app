@@ -57,7 +57,7 @@
                                     <td>{{item.firstname}} {{item.lastname}}</td>
                                     <td>{{item.email}}</td>
                                     <td>{{item.mobilenumber}}</td>
-                                    <td>{{item.salary | currency:'INR'}}</td>
+                                    <td>{{item.salary | currency:"₹"}}</td>
                                     <th>
                                         <div class="row justify-content-end mx-0">
                                             <div class="col-auto pe-0">
@@ -98,8 +98,8 @@
                 </div>
                 <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control rounded-0 border shadow-none" maxlength="30" formControlName="lastname" id="lastname" placeholder="Doe" required>
-                        <label for="lastname">Last Name</label>
+                        <input type="text" class="form-control rounded-0 border shadow-none" maxlength="30" formControlName="lastname" id="lastname" placeholder="Doe">
+                        <label for="lastname">Last Name <small>(Optional)</small></label>
                         <div class="invalid-feedback" *ngIf="lastname && lastname.valid || lastname && lastname.touched">Please enter valid last name.</div>
                     </div>
                 </div>
@@ -129,7 +129,7 @@
         <div class="modal-footer rounded-0">
             <button type="button" class="btn rounded-0 border-2 border border-dark btn-outline-dark" id="closeModal" data-bs-dismiss="modal">Close</button>
             <button type="submit" *ngIf="showAdd == true" class="btn rounded-0 border-2 border border-dark btn-dark" [disabled]="formValue.invalid">Add Employee</button>
-            <button type="button" *ngIf="showUpdate == true" class="btn rounded-0 border-2 border border-dark btn-dark" (click)="updateEmployee()">Save changes</button>
+            <button type="button" *ngIf="showUpdate == true" class="btn rounded-0 border-2 border border-dark btn-dark" [disabled]="formValue.invalid" (click)="updateEmployee()">Save changes</button>
         </div>
     </form>
     </div>

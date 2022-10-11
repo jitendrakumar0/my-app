@@ -21,7 +21,7 @@ export class EmployeeDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
       firstname : new FormControl ('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
-      lastname : new FormControl ('', [Validators.required, Validators.maxLength(30)]),
+      lastname : new FormControl ('', [Validators.maxLength(30)]),
       email: new FormControl ('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'), Validators.email]),
       mobilenumber: new FormControl ('', [Validators.required, Validators.pattern('[0-9]{10,12}$')]),
       salary: new FormControl ('', [Validators.required, Validators.pattern('[0-9]{2,10}$')])
