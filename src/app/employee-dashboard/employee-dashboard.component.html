@@ -92,35 +92,35 @@
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control rounded-0 border shadow-none" formControlName="firstname" id="firstname" placeholder="John" required>
                         <label for="firstname">First Name</label>
-                        <div class="invalid-feedback" *ngIf="this.formValue.valid || formValue.touched">Please enter valid first name.</div>
+                        <div class="invalid-feedback" *ngIf="firstname && firstname.valid || firstname && firstname.touched">Please enter valid first name.</div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control rounded-0 border shadow-none" formControlName="lastname" id="lastname" placeholder="Doe" required>
                         <label for="lastname">Last Name</label>
-                        <div class="invalid-feedback" *ngIf="formValue.valid || formValue.touched">Please enter valid last name.</div>
+                        <div class="invalid-feedback" *ngIf="lastname && lastname.valid || lastname && lastname.touched">Please enter valid last name.</div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control rounded-0 border shadow-none" formControlName="email" id="email" placeholder="name@example.com" required>
                         <label for="email">Email address</label>
-                        <div class="invalid-feedback" *ngIf="formValue.valid || formValue.touched">Please enter valid email id.</div>
+                        <div class="invalid-feedback" *ngIf="email && email.valid || email && email.touched">Please enter valid email id.</div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-floating mb-3">
                         <input type="tel" class="form-control rounded-0 border shadow-none" formControlName="mobilenumber" id="mobilenumber" placeholder="+91 0987654321" required>
                         <label for="mobilenumber">Mobile Number</label>
-                        <div class="invalid-feedback" *ngIf="formValue.valid || formValue.touched">Please enter valid mobile number.</div>
+                        <div class="invalid-feedback" *ngIf="mobilenumber && mobilenumber.valid || mobilenumber && mobilenumber.touched">Please enter valid mobile number.</div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-floating mb-3">
                         <input type="tel" class="form-control rounded-0 border shadow-none" formControlName="salary" id="salary" placeholder="0" required>
                         <label for="salary">Salary</label>
-                        <div class="invalid-feedback" *ngIf="formValue.valid || formValue.touched">Please enter valid salary.</div>
+                        <div class="invalid-feedback" *ngIf="salary && salary.valid || salary && salary.touched">Please enter valid salary.</div>
                     </div>
                 </div>
             </div>

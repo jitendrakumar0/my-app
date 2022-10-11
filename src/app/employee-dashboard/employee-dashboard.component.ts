@@ -45,6 +45,22 @@ export class EmployeeDashboardComponent implements OnInit {
     } else {}
   }
 
+  get firstname() {
+    return this.formValue.get('firstname')
+  }
+  get lastname() {
+    return this.formValue.get('lastname')
+  }
+  get email() {
+    return this.formValue.get('email')
+  }
+  get mobilenumber() {
+    return this.formValue.get('mobilenumber')
+  }
+  get salary() {
+    return this.formValue.get('salary')
+  }
+
   getAllEmployee() {
     this.api.getAllEmployee().subscribe(res=>{
       this.employeeData = res
