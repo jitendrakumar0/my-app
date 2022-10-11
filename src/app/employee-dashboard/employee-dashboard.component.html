@@ -81,7 +81,7 @@
 <!-- Modal -->
 <div class="modal fade" id="addEmployee" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addEmployeeLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-    <form class="modal-content rounded-0" [formGroup]="formValue" (ngSubmit)="postEmployeeDetails()">
+    <form class="modal-content rounded-0 was-validated" [formGroup]="formValue" (ngSubmit)="postEmployeeDetails()">
         <div class="modal-header rounded-0 bg-dark">
             <h1 class="modal-title fs-5 text-white" id="addEmployeeLabel">Add New Employee</h1>
             <button type="button" class="btn-close bg-white rounded-pill" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -90,37 +90,37 @@
             <div class="row gap-3">
                 <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control rounded-0 shadow-none" formControlName="firstname" id="firstname" placeholder="John" required>
+                        <input type="text" class="form-control rounded-0 border shadow-none" formControlName="firstname" id="firstname" placeholder="John" required>
                         <label for="firstname">First Name</label>
-                        <div class="invalid-feedback">Please enter first name.</div>
+                        <div class="invalid-feedback" *ngIf="this.formValue.valid || formValue.touched">Please enter valid first name.</div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control rounded-0 shadow-none" formControlName="lastname" id="lastname" placeholder="Doe" required>
+                        <input type="email" class="form-control rounded-0 border shadow-none" formControlName="lastname" id="lastname" placeholder="Doe" required>
                         <label for="lastname">Last Name</label>
-                        <div class="invalid-feedback">Please enter last name.</div>
+                        <div class="invalid-feedback" *ngIf="formValue.valid || formValue.touched">Please enter valid last name.</div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control rounded-0 shadow-none" formControlName="email" id="email" placeholder="name@example.com" required>
+                        <input type="email" class="form-control rounded-0 border shadow-none" formControlName="email" id="email" placeholder="name@example.com" required>
                         <label for="email">Email address</label>
-                        <div class="invalid-feedback">Please enter email id.</div>
+                        <div class="invalid-feedback" *ngIf="formValue.valid || formValue.touched">Please enter valid email id.</div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="tel" class="form-control rounded-0 shadow-none" formControlName="mobilenumber" id="mobilenumber" placeholder="+91 0987654321" required>
+                        <input type="tel" class="form-control rounded-0 border shadow-none" formControlName="mobilenumber" id="mobilenumber" placeholder="+91 0987654321" required>
                         <label for="mobilenumber">Mobile Number</label>
-                        <div class="invalid-feedback">Please enter mobile number.</div>
+                        <div class="invalid-feedback" *ngIf="formValue.valid || formValue.touched">Please enter valid mobile number.</div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="tel" class="form-control rounded-0 shadow-none" formControlName="salary" id="salary" placeholder="0" required>
+                        <input type="tel" class="form-control rounded-0 border shadow-none" formControlName="salary" id="salary" placeholder="0" required>
                         <label for="salary">Salary</label>
-                        <div class="invalid-feedback">Please enter salary.</div>
+                        <div class="invalid-feedback" *ngIf="formValue.valid || formValue.touched">Please enter valid salary.</div>
                     </div>
                 </div>
             </div>

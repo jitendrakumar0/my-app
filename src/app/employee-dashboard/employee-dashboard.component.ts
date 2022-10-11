@@ -24,24 +24,25 @@ export class EmployeeDashboardComponent implements OnInit {
       firstname : new FormControl ('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
       lastname : new FormControl ('', [Validators.required, Validators.maxLength(30)]),
       email: new FormControl ('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
-      mobilenumber: new FormControl ('', [Validators.required]),
-      salary: new FormControl ('', [Validators.required])
+      mobilenumber: new FormControl ('', [Validators.required, Validators.pattern('[0-9]{10,12}$')]),
+      salary: new FormControl ('', [Validators.required, Validators.pattern('[0-9]{2,50}$')])
     })
 
     this.getAllEmployee();
   }
 
   postEmployeeDetails() {
-    this.employeeModelObj = this.formValue.value;
-
-    this.api.postEmployee(this.employeeModelObj).subscribe((result)=>{
-      alert("Employee Added Successfuly as " + this.formValue.value.firstname);
-      let ref = document.getElementById("closeModal");
-      ref?.click();
-      this.formValue.reset();
-    }, err=> {
-      alert("Something Went Wrong.");
-    })
+    if(this.formValue.valid) {
+      this.employeeModelObj = this.formValue.value;
+      this.api.postEmployee(this.employeeModelObj).subscribe((result)=>{
+        alert("Employee Added Successfuly as " + this.formValue.value.firstname);
+        let ref = document.getElementById("closeModal");
+        ref?.click();
+        this.formValue.reset();
+      }, err=> {
+        alert("Something Went Wrong.");
+      })
+    } else {}
   }
 
   getAllEmployee() {
