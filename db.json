@@ -1,0 +1,30 @@
+{
+  "posts": [
+    {
+      "firstname": "Jitendra Kumar",
+      "lastname": "Bijarnia",
+      "email": "jitendrakumar.img@gmail.com",
+      "mobilenumber": "+91 8302598435",
+      "salary": "45000",
+      "id": 1
+    },
+    {
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "mobilenumber": "",
+      "salary": "",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

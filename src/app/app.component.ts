@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-app';
+  title = 'Angular 11 CRUD with json-server | Bootstrap UI | Angular Reactive Form';
 }
