@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "employees": [
     {
       "firstname": "Jitendra Kumar",
       "lastname": "Bijarnia",
@@ -9,36 +9,20 @@
       "id": 1
     },
     {
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "mobilenumber": "",
-      "salary": "",
+      "firstname": "Jitendra ki",
+      "lastname": "Ji",
+      "email": "jitendrakumar.img@gmail.com",
+      "mobilenumber": "876543276543",
+      "salary": "900055",
       "id": 2
     },
     {
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "mobilenumber": "",
-      "salary": "",
-      "id": 3
-    },
-    {
-      "firstname": "Jitendra",
+      "firstname": "Jitendra ki",
       "lastname": "Ji",
       "email": "jitendrakumar.img@gmail.com",
       "mobilenumber": "876543276543",
       "salary": "9000",
-      "id": 4
-    },
-    {
-      "firstname": "Jisdfdfsf",
-      "lastname": "sfd",
-      "email": "jitendrakumar.img@gmail.com",
-      "mobilenumber": "8765432766",
-      "salary": "9000",
-      "id": 5
+      "id": 3
     }
   ],
   "comments": [

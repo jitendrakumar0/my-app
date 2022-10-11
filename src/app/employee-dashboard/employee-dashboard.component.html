@@ -27,7 +27,7 @@
                 </li>
             </ul>
             <form class="d-flex">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#addEmployee" class="btn btn-light fw-bold rounded-0">Add Employee</button>
+                <button type="button" (click)="clickAddEmployee()" data-bs-toggle="modal" data-bs-target="#addEmployee" class="btn btn-light fw-bold rounded-0">Add Employee</button>
             </form>
         </div>
     </div>
@@ -57,14 +57,14 @@
                                     <td>{{item.firstname}} {{item.lastname}}</td>
                                     <td>{{item.email}}</td>
                                     <td>{{item.mobilenumber}}</td>
-                                    <td>₹ {{item.salary}}</td>
+                                    <td>{{item.salary | currency:'INR'}}</td>
                                     <th>
                                         <div class="row justify-content-end mx-0">
                                             <div class="col-auto pe-0">
-                                                <button type="button" class="btn btn-dark border-2 border border-dark rounded-0">Edit</button>
+                                                <button type="button" (click)="onEdit(item)" class="btn btn-dark border-2 border border-dark rounded-0" data-bs-toggle="modal" data-bs-target="#addEmployee">Edit</button>
                                             </div>
                                             <div class="col-auto pe-0">
-                                                <button type="button" class="btn btn-outline-dark border-2 border border-dark rounded-0">Delete</button>
+                                                <button type="button" (click)="deleteEmployee(item)" class="btn btn-outline-dark border-2 border border-dark rounded-0">Delete</button>
                                             </div>
                                         </div>
                                     </th>
@@ -83,43 +83,44 @@
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
     <form class="modal-content rounded-0 was-validated" [formGroup]="formValue" (ngSubmit)="postEmployeeDetails()">
         <div class="modal-header rounded-0 bg-dark">
-            <h1 class="modal-title fs-5 text-white" id="addEmployeeLabel">Add New Employee</h1>
+            <h1 class="modal-title fs-5 text-white" id="addEmployeeLabel" *ngIf="showAdd == true">Add New Employee</h1>
+            <h1 class="modal-title fs-5 text-white" id="addEmployeeLabel" *ngIf="showUpdate == true">Update Employee Detail</h1>
             <button type="button" class="btn-close bg-white rounded-pill" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <div class="row gap-3">
                 <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control rounded-0 border shadow-none" formControlName="firstname" id="firstname" placeholder="John" required>
+                        <input type="text" class="form-control rounded-0 border shadow-none" minlength="3" maxlength="30" formControlName="firstname" id="firstname" placeholder="John" required>
                         <label for="firstname">First Name</label>
                         <div class="invalid-feedback" *ngIf="firstname && firstname.valid || firstname && firstname.touched">Please enter valid first name.</div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control rounded-0 border shadow-none" formControlName="lastname" id="lastname" placeholder="Doe" required>
+                        <input type="text" class="form-control rounded-0 border shadow-none" maxlength="30" formControlName="lastname" id="lastname" placeholder="Doe" required>
                         <label for="lastname">Last Name</label>
                         <div class="invalid-feedback" *ngIf="lastname && lastname.valid || lastname && lastname.touched">Please enter valid last name.</div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control rounded-0 border shadow-none" formControlName="email" id="email" placeholder="name@example.com" required>
+                        <input type="email" class="form-control rounded-0 border shadow-none" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" formControlName="email" id="email" placeholder="name@example.com" required>
                         <label for="email">Email address</label>
                         <div class="invalid-feedback" *ngIf="email && email.valid || email && email.touched">Please enter valid email id.</div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="tel" class="form-control rounded-0 border shadow-none" formControlName="mobilenumber" id="mobilenumber" placeholder="+91 0987654321" required>
+                        <input type="tel" class="form-control rounded-0 border shadow-none" minlength="10" maxlength="12" (keydown)="phoneKeyUp($event)" formControlName="mobilenumber" id="mobilenumber" placeholder="+91 0987654321" required>
                         <label for="mobilenumber">Mobile Number</label>
                         <div class="invalid-feedback" *ngIf="mobilenumber && mobilenumber.valid || mobilenumber && mobilenumber.touched">Please enter valid mobile number.</div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-floating mb-3">
-                        <input type="tel" class="form-control rounded-0 border shadow-none" formControlName="salary" id="salary" placeholder="0" required>
-                        <label for="salary">Salary</label>
+                        <input type="tel" class="form-control rounded-0 border shadow-none" minlength="2" maxlength="10" (keydown)="phoneKeyUp($event)" formControlName="salary" id="salary" placeholder="0" required>
+                        <label for="salary">Salary in ₹</label>
                         <div class="invalid-feedback" *ngIf="salary && salary.valid || salary && salary.touched">Please enter valid salary.</div>
                     </div>
                 </div>
@@ -127,8 +128,8 @@
         </div>
         <div class="modal-footer rounded-0">
             <button type="button" class="btn rounded-0 border-2 border border-dark btn-outline-dark" id="closeModal" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn rounded-0 border-2 border border-dark btn-dark">Add Employee</button>
-            <button type="submit" class="btn rounded-0 border-2 border border-dark btn-dark" [disabled]="formValue.invalid">Save changes</button>
+            <button type="submit" *ngIf="showAdd == true" class="btn rounded-0 border-2 border border-dark btn-dark" [disabled]="formValue.invalid">Add Employee</button>
+            <button type="button" *ngIf="showUpdate == true" class="btn rounded-0 border-2 border border-dark btn-dark" (click)="updateEmployee()">Save changes</button>
         </div>
     </form>
     </div>
