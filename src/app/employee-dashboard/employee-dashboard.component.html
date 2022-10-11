@@ -128,7 +128,7 @@
         <div class="modal-footer rounded-0">
             <button type="button" class="btn rounded-0 border-2 border border-dark btn-outline-dark" id="closeModal" data-bs-dismiss="modal">Close</button>
             <button type="button" class="btn rounded-0 border-2 border border-dark btn-dark">Add Employee</button>
-            <button type="submit" class="btn rounded-0 border-2 border border-dark btn-dark">Save changes</button>
+            <button type="submit" class="btn rounded-0 border-2 border border-dark btn-dark" [disabled]="formValue.invalid">Save changes</button>
         </div>
     </form>
     </div>
