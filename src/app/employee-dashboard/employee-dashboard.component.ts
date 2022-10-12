@@ -75,6 +75,8 @@ export class EmployeeDashboardComponent implements OnInit {
   getAllEmployee() {
     this.api.getAllEmployee().subscribe(res=>{
       this.employeeData = res
+    }, err=> {
+      alert("Something Went Wrong.");
     })
   }
 
@@ -84,7 +86,7 @@ export class EmployeeDashboardComponent implements OnInit {
         this.api.deleteEmployee(data.id).subscribe(res=>{
           this.getAllEmployee();
         }, err=> {
-          alert("Something Went Wrong.");
+          alert("Employee Not Found.");
         })
       }
     } else {
