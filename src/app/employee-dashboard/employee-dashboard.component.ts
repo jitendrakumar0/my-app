@@ -79,12 +79,12 @@ export class EmployeeDashboardComponent implements OnInit {
   }
 
   deleteEmployee(data:any) {
-    console.log(this.employeeData.length);
     if(this.employeeData.length != 1) {
-      console.log(this.api.getAllEmployee.length);
       if (confirm("Are You Sure?\nYou want to remove this employee.") == true) {
         this.api.deleteEmployee(data.id).subscribe(res=>{
           this.getAllEmployee();
+        }, err=> {
+          alert("Something Went Wrong.");
         })
       }
     } else {
