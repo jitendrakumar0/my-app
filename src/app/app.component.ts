@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-app';
+  title = 'Angular 13 CRUD with Angular Material UI | json-server | Angular Reactive Form';
 }
