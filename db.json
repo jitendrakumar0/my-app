@@ -1,0 +1,77 @@
+{
+  "productList": [
+    {
+      "productName": "Laptop",
+      "productCategory": "Electronics",
+      "date": "2022-10-14T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": "75000",
+      "comment": "hello hi hi",
+      "id": 1
+    },
+    {
+      "productName": "Laptop",
+      "productCategory": "Electronics",
+      "date": "2022-10-14T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": "75000",
+      "comment": "Kuch Bhi",
+      "id": 2
+    },
+    {
+      "productName": "Apple",
+      "productCategory": "Fruits",
+      "date": "2022-10-21T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": "100",
+      "comment": "Taja Taja",
+      "id": 3
+    },
+    {
+      "productName": "Laptop",
+      "productCategory": "Electronics",
+      "date": "2022-10-14T18:30:00.000Z",
+      "freshness": "Second Hand",
+      "price": "75000",
+      "comment": "hi",
+      "id": 4
+    },
+    {
+      "productName": "10/22/2022",
+      "productCategory": "Electronics",
+      "date": "2022-10-12T18:30:00.000Z",
+      "freshness": "Refurbished",
+      "price": "654",
+      "comment": "fgasrdfgb",
+      "id": 8
+    },
+    {
+      "productName": "Laptop",
+      "productCategory": "Electronics",
+      "date": "2022-10-14T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": "75000",
+      "comment": "Kuch Bhi slkfs lasjfk flkdsf f",
+      "id": 10
+    },
+    {
+      "productName": "Hello",
+      "productCategory": "Electronics",
+      "date": "2022-10-12T18:30:00.000Z",
+      "freshness": "Second Hand",
+      "price": "963953",
+      "comment": "skdrnrlasjvljg rggsgjfdk jrefej fjewqi jfr",
+      "id": 11
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

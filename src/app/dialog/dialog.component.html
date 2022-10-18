@@ -1,21 +1,41 @@
 <h2>Add Product</h2>
 <div mat-dialog-content>
-    <mat-form-field appearance="outline">
-        <mat-label>Product Name</mat-label>
-        <input matInput placeholder="Name">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Product Category</mat-label>
-        <mat-select placeholder="Category">
-            <mat-option value="Fruits">Fruits</mat-option>
-            <mat-option value="Vegetables">Vegetables</mat-option>
-            <mat-option value="Electronics">Electronics</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Choose a date</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
+    <form [formGroup]="productForm" (ngSubmit)="submitProductForm()">
+        <mat-form-field appearance="outline">
+            <mat-label>Product Name</mat-label>
+            <input matInput formControlName="productName" placeholder="Product Name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Product Category</mat-label>
+            <mat-select formControlName="productCategory" placeholder="Category">
+                <mat-option value="Fruits">Fruits</mat-option>
+                <mat-option value="Vegetables">Vegetables</mat-option>
+                <mat-option value="Electronics">Electronics</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input formControlName="date" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <label id="example-radio-group-label"><h3>Product Freshness</h3></label>
+        <mat-radio-group formControlName="freshness" aria-labelledby="example-radio-group-label" class="example-radio-group">
+            <mat-radio-button class="example-radio-button" *ngFor="let freshness of freshnessList" [value]="freshness">
+                {{freshness}}
+            </mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field appearance="outline">
+            <mat-label>Price</mat-label>
+            <input matInput formControlName="price" type="tel" placeholder="Enter a Price">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Comment</mat-label>
+            <textarea matInput formControlName="comment" placeholder=""></textarea>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button mat-dialog-close>Close</button>
+    <button style="margin-left: 8px;" (click)="submitProductForm()" mat-raised-button color="primary">{{actionBtn}}</button>
 </div>
