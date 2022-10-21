@@ -4,16 +4,7 @@
       "productName": "Laptop",
       "productCategory": "Electronics",
       "date": "2022-10-14T18:30:00.000Z",
-      "freshness": "Brand New",
-      "price": "75000",
-      "comment": "hello hi hi",
-      "id": 1
-    },
-    {
-      "productName": "Laptop",
-      "productCategory": "Electronics",
-      "date": "2022-10-14T18:30:00.000Z",
-      "freshness": "Brand New",
+      "freshness": "Refurbished",
       "price": "75000",
       "comment": "Kuch Bhi",
       "id": 2
